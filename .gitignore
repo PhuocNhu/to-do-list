@@ -1,0 +1,5 @@
+/.angular
+/.editorconfig
+/.vscode
+/compile-git-with-openssl.sh
+/node_modules

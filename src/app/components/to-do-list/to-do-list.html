@@ -1,0 +1,50 @@
+<div class="card shadow">
+    <div class="card shadow m-2 custom-rounded">
+        <h3 class="card-header bg-custom-yellow text-white custom-rounded">To Do App</h3>
+        <div class="input-group p-3">
+            <input type="text" class="form-control" placeholder="Enter task" aria-label="Enter task" aria-describedby="basic-addon2" [(ngModel)] = 'inputAddTodo'>
+            <button class="btn btn-outline-info" type="button" id="button-addon2" (click)="onSubmitAdd()">+</button>
+        </div>
+    </div>
+    <h3 class="text-info m-2">
+        Tasks :
+    </h3>
+    <div class="">
+        <ul *ngFor="let item of todoService.todoList" class="list-group mx-4 my-3">
+            <li class="list-group-item card shadow">
+                    <span class="d-inline fs-6 ps-3 align-middle">
+                        {{item.title}}
+                    </span>
+                    <div class="float-end">
+                        <!-- <button class="btn btn-outline-info mx-2 px-3 py-2 rounded-0" type="button" id="button-addon3">e</button> -->
+                        <button type="button" class="btn btn-outline-info mx-2 px-3 py-2 rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onEdit(item.title)">
+                            e
+                        </button>
+
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="text" class="form-control" placeholder="Enter task" aria-label="Enter task" aria-describedby="basic-addon2" [(ngModel)] = 'inputEditTodo'>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" (click)="onSubmitEdit(item.id)" data-bs-dismiss="modal">Save changes</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-danger px-3 py-2 custom-rounded-end" type="button" id="button-addon4" (click)="onDelete(item)">X</button>
+                    </div>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body pb-5 pt-5"></div>
+</div>
+
+
+

@@ -1,0 +1,12 @@
+.bg-custom-yellow {
+  background-color: #fec312;
+}
+.custom-rounded {
+    border-radius: 0.25rem;
+}
+.custom-rounded-end{
+    border-top-right-radius: var(--bs-border-radius) !important;
+    border-bottom-right-radius: var(--bs-border-radius) !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
