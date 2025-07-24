@@ -18,6 +18,8 @@ export class ToDoList{
   constructor(public todoService: ToDoService, private toastrService: ToastrService){}
   onEdit(tittle: string){
     this.inputEditTodo = tittle;
+    console.log("log test");
+    
   }
   onSubmitEdit(id: number){
     this.todoService.editTodo(id, this.inputEditTodo);
